@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E88E5"
+    android:background="@color/green_500"
     tools:context=".SplashScreen.SplashScreen">
 
     <TextView
@@ -12,9 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fjalla_one"
-        android:text="Virtual Classroom"
+        android:text="VIRTUAL CLASSROOM"
         android:textColor="#FFFFFF"
-        android:textSize="48sp"
+        android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
