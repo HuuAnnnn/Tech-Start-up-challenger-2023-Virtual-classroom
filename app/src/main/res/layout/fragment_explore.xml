@@ -49,6 +49,8 @@
                 android:layout_marginVertical="10dp"
                 android:drawableLeft="@drawable/baseline_search_24"
                 android:drawablePadding="10dp"
+                android:focusable="false"
+                android:focusableInTouchMode="true"
                 android:hint="Explore all courses"/>
 
             <LinearLayout
@@ -83,7 +85,7 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/lvHotTopics"
+                android:id="@+id/rvHotTopics"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_weight="1" />
