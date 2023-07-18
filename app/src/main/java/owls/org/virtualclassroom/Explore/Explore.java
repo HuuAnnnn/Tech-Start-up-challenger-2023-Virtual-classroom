@@ -97,6 +97,7 @@ public class Explore extends Fragment {
 
         myCourseAdapter = new MyCourseAdapter(myCourses);
         rvMyCourses.setAdapter(myCourseAdapter);
+        System.out.println(myCourseAdapter.getItemCount());
 
         LinearLayoutManager linearHotTopicLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         rvHotTopics.setLayoutManager(linearHotTopicLayoutManager);

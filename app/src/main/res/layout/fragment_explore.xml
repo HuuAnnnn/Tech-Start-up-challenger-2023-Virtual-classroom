@@ -120,17 +120,20 @@
                     android:text="See all" />
             </LinearLayout>
 
-            <HorizontalScrollView
+            <androidx.core.widget.NestedScrollView
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:fillViewport="true">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvMyCourse"
                     android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
                     android:layout_height="wrap_content" />
-            </HorizontalScrollView>
+
+            </androidx.core.widget.NestedScrollView>
 
             <LinearLayout
                 android:layout_width="match_parent"
