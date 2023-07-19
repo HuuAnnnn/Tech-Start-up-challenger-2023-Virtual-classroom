@@ -40,13 +40,17 @@ public class Explore extends Fragment {
     private RecyclerView rvHotTopics;
     private RecyclerView rvMyCourses;
     private RecyclerView rvRecommendCourses;
+    private RecyclerView rvTopRatedCourses;
 
     private ArrayList<Topic> hotTopics;
     private ArrayList<MyCourse> myCourses;
     private ArrayList<MyCourse> recommendCourses;
+    private ArrayList<MyCourse> topRatedCourse;
+
     private TopicAdapter topicAdapter;
     private MyCourseAdapter myCourseAdapter;
     private RecommendCoursesAdapter recommendCoursesAdapter;
+    private RecommendCoursesAdapter topRatedCourseAdapter;
 
     public Explore() {
         // Required empty public constructor
@@ -76,11 +80,13 @@ public class Explore extends Fragment {
         hotTopics = new ArrayList<Topic>();
         myCourses = new ArrayList<MyCourse>();
         recommendCourses = new ArrayList<MyCourse>();
+        topRatedCourse = new ArrayList<MyCourse>();
 
         for (int i = 0; i < 10; i++) {
             hotTopics.add(new Topic("Topic " + (i + 1), "#008000"));
             myCourses.add(new MyCourse("https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/326288859_1543719389474032_4389394274225987263_n.png?_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=JMap_emOJB0AX9_NwLj&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfBitwdJDrxH-obx8Pmbw01XAiXsWD9wL2_r3IWd-w3srA&oe=64BBCC1C", "Title" + i, "Edu title " + (i + 1), "Professional certificates", i + 0.9, 162 + i));
             if (i < 5) {
+                topRatedCourse.add(new MyCourse("https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/326288859_1543719389474032_4389394274225987263_n.png?_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=JMap_emOJB0AX9_NwLj&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfBitwdJDrxH-obx8Pmbw01XAiXsWD9wL2_r3IWd-w3srA&oe=64BBCC1C", "Title" + i, "Edu title " + (i + 1), "Professional certificates", i + 0.9, 162 + i));
                 recommendCourses.add(new MyCourse("https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/326288859_1543719389474032_4389394274225987263_n.png?_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=JMap_emOJB0AX9_NwLj&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfBitwdJDrxH-obx8Pmbw01XAiXsWD9wL2_r3IWd-w3srA&oe=64BBCC1C", "Title" + i, "Edu title " + (i + 1), "Professional certificates", i + 0.9, 162 + i));
             }
         }
@@ -99,24 +105,35 @@ public class Explore extends Fragment {
         rvHotTopics = (RecyclerView) view.findViewById(R.id.rvHotTopics);
         rvMyCourses = (RecyclerView) view.findViewById(R.id.rvMyCourse);
         rvRecommendCourses = (RecyclerView) view.findViewById(R.id.rvRecommendCourses);
+        rvTopRatedCourses = (RecyclerView) view.findViewById(R.id.rvTopRatedCourses);
 
         topicAdapter = new TopicAdapter(hotTopics);
-        rvHotTopics.setAdapter(topicAdapter);
 
+        // My course features
         myCourseAdapter = new MyCourseAdapter(myCourses);
         rvMyCourses.setAdapter(myCourseAdapter);
-        System.out.println(myCourseAdapter.getItemCount());
 
+        // Hot topic feature
+        rvHotTopics.setAdapter(topicAdapter);
         LinearLayoutManager linearHotTopicLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         rvHotTopics.setLayoutManager(linearHotTopicLayoutManager);
 
+        // My course feature
         LinearLayoutManager linearMyCourseLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         rvMyCourses.setLayoutManager(linearMyCourseLayoutManager);
 
+        // recommendation course features
         recommendCoursesAdapter = new RecommendCoursesAdapter(recommendCourses);
         LinearLayoutManager linearRecommendCourseLayoutManager = new LinearLayoutManager(getContext());
         rvRecommendCourses.setAdapter(recommendCoursesAdapter);
         rvRecommendCourses.setLayoutManager(linearRecommendCourseLayoutManager);
+
+
+        // Top rated course feature
+        topRatedCourseAdapter = new RecommendCoursesAdapter(topRatedCourse);
+        LinearLayoutManager linearTopRatedCourseLayoutManager = new LinearLayoutManager(getContext());
+        rvTopRatedCourses.setAdapter(topRatedCourseAdapter);
+        rvTopRatedCourses.setLayoutManager(linearTopRatedCourseLayoutManager);
     }
 
     @Override
