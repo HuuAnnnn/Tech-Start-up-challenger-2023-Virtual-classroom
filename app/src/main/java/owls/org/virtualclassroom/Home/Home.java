@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import owls.org.virtualclassroom.Explore.Explore;
+import owls.org.virtualclassroom.MyCourse.DisplayEnrollCourse;
 import owls.org.virtualclassroom.Profile.Profile;
 import owls.org.virtualclassroom.R;
 
@@ -39,6 +40,7 @@ public class Home extends AppCompatActivity {
                     changeFragment(new Explore());
                     break;
                 case R.id.my_course:
+                    changeFragment(new DisplayEnrollCourse());
                     break;
             }
 

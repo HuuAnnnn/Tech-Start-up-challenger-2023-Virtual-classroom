@@ -14,6 +14,12 @@
         android:theme="@style/Theme.VirtualClassroom"
         tools:targetApi="33">
         <activity
+            android:name=".Authentication.Register"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.Login"
+            android:exported="false" />
+        <activity
             android:name=".Home.Home"
             android:exported="false" />
         <activity
@@ -31,9 +37,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

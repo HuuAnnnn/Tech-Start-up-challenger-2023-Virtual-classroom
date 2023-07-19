@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import owls.org.virtualclassroom.Authentication.Login;
 import owls.org.virtualclassroom.Config.Configuration;
 import owls.org.virtualclassroom.Home.Home;
 import owls.org.virtualclassroom.MainActivity;
@@ -20,7 +21,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, Home.class);
+                Intent intent = new Intent(SplashScreen.this, Login.class);
                 startActivity(intent);
                 finish();
             }
