@@ -55,6 +55,8 @@ public class RecommendCoursesAdapter extends RecyclerView.Adapter<RecommendCours
         holder.level.setText(myCourse.getLevel());
         holder.rate.setText(String.valueOf(myCourse.getRate()));
         holder.numOfRated.setText(String.format("(%dK)", myCourse.getNumOfRated()));
+        DownloadImageTask downloadImageTask = new DownloadImageTask(holder.thumbnail);
+        downloadImageTask.execute(myCourse.getUrlThumbnail());
     }
 
     @Override
