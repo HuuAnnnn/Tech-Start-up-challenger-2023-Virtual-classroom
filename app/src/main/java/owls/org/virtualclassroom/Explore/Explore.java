@@ -39,10 +39,14 @@ public class Explore extends Fragment {
 
     private RecyclerView rvHotTopics;
     private RecyclerView rvMyCourses;
+    private RecyclerView rvRecommendCourses;
+
     private ArrayList<Topic> hotTopics;
     private ArrayList<MyCourse> myCourses;
+    private ArrayList<MyCourse> recommendCourses;
     private TopicAdapter topicAdapter;
     private MyCourseAdapter myCourseAdapter;
+    private RecommendCoursesAdapter recommendCoursesAdapter;
 
     public Explore() {
         // Required empty public constructor
@@ -71,12 +75,13 @@ public class Explore extends Fragment {
         super.onCreate(savedInstanceState);
         hotTopics = new ArrayList<Topic>();
         myCourses = new ArrayList<MyCourse>();
+        recommendCourses = new ArrayList<MyCourse>();
 
         for (int i = 0; i < 10; i++) {
             hotTopics.add(new Topic("Topic " + (i + 1), "#008000"));
             myCourses.add(new MyCourse("Title" + i, "Edu title " + (i + 1), "Professional certificates", i + 0.9, 162 + i));
+            recommendCourses.add(new MyCourse("Title" + i, "Edu title " + (i + 1), "Professional certificates", i + 0.9, 162 + i));
         }
-        System.out.println(myCourses.size());
     }
 
     @Override
@@ -91,6 +96,7 @@ public class Explore extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         rvHotTopics = (RecyclerView) view.findViewById(R.id.rvHotTopics);
         rvMyCourses = (RecyclerView) view.findViewById(R.id.rvMyCourse);
+        rvRecommendCourses = (RecyclerView) view.findViewById(R.id.rvRecommendCourses);
 
         topicAdapter = new TopicAdapter(hotTopics);
         rvHotTopics.setAdapter(topicAdapter);
@@ -104,6 +110,11 @@ public class Explore extends Fragment {
 
         LinearLayoutManager linearMyCourseLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         rvMyCourses.setLayoutManager(linearMyCourseLayoutManager);
+
+        recommendCoursesAdapter = new RecommendCoursesAdapter(recommendCourses);
+        LinearLayoutManager linearRecommendCourseLayoutManager = new LinearLayoutManager(getContext());
+        rvRecommendCourses.setAdapter(recommendCoursesAdapter);
+        rvRecommendCourses.setLayoutManager(linearRecommendCourseLayoutManager);
     }
 
     @Override
