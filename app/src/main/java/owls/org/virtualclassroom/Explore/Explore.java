@@ -79,8 +79,8 @@ public class Explore extends Fragment {
 
         for (int i = 0; i < 10; i++) {
             hotTopics.add(new Topic("Topic " + (i + 1), "#008000"));
-            myCourses.add(new MyCourse("Title" + i, "Edu title " + (i + 1), "Professional certificates", i + 0.9, 162 + i));
-            recommendCourses.add(new MyCourse("Title" + i, "Edu title " + (i + 1), "Professional certificates", i + 0.9, 162 + i));
+            myCourses.add(new MyCourse("https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/326288859_1543719389474032_4389394274225987263_n.png?_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=JMap_emOJB0AX9_NwLj&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfBitwdJDrxH-obx8Pmbw01XAiXsWD9wL2_r3IWd-w3srA&oe=64BBCC1C", "Title" + i, "Edu title " + (i + 1), "Professional certificates", i + 0.9, 162 + i));
+            recommendCourses.add(new MyCourse("https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/326288859_1543719389474032_4389394274225987263_n.png?_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=JMap_emOJB0AX9_NwLj&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfBitwdJDrxH-obx8Pmbw01XAiXsWD9wL2_r3IWd-w3srA&oe=64BBCC1C", "Title" + i, "Edu title " + (i + 1), "Professional certificates", i + 0.9, 162 + i));
         }
     }
 

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import owls.org.virtualclassroom.Config.Utils;
 import owls.org.virtualclassroom.R;
 
 public class MyCourseAdapter extends RecyclerView.Adapter<MyCourseAdapter.MyCourseViewHolder> {
@@ -56,6 +57,8 @@ public class MyCourseAdapter extends RecyclerView.Adapter<MyCourseAdapter.MyCour
         holder.level.setText(myCourse.getLevel());
         holder.rate.setText(String.valueOf(myCourse.getRate()));
         holder.numOfRated.setText(String.format("(%d)", myCourse.getNumOfRated()));
+        DownloadImageTask downloadImageTask = new DownloadImageTask(holder.thumbnail);
+        downloadImageTask.execute(myCourse.getUrlThumbnail());
     }
 
     @Override
