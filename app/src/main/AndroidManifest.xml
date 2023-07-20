@@ -15,6 +15,9 @@
         android:theme="@style/Theme.VirtualClassroom"
         tools:targetApi="33">
         <activity
+            android:name=".LearningPath.LearningPathScreen"
+            android:exported="false" />
+        <activity
             android:name=".Learn.Learn"
             android:exported="false" />
         <activity
